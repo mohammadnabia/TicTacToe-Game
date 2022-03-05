@@ -1,0 +1,150 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(96, 202, 202, 0.356);
+    background: linear-gradient(50deg, #ad4343c5, #3669b1cc, #9c7e2ac7, #4f0c8fd3);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+}
+
+section {
+    text-align: center;
+}
+
+.game--title {
+    font-family: 'Games', sans-serif;
+    font-size: xx-large;
+    text-align: center;
+    -webkit-animation: glow 3s ease-in-out infinite alternate;
+    -moz-animation: glow 3s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.game--status {
+    font-family: 'Games', sans-serif;
+    font-size: large;
+}
+
+.game--container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 306px;
+}
+
+.cell {
+    font-family: 'Permanent Marker', cursive;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 1px #333333;
+    border: 1px solid #333333;
+    cursor: pointer;
+    line-height: 100px;
+    font-size: 60px;
+    color: #1b4677;
+}
+
+.wrapper {
+    width: 314px;
+    height: 314px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-element {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    display: block;
+    height: 98%;
+    width: 98%;
+    margin: auto;
+    align-self: center;
+    background: rgb(231, 229, 229);
+    z-index: 1;
+}
+
+.border {
+    position: absolute;
+    display: block;
+    top: -50%;
+    left: -50%;
+    z-index: -9;
+    display: block;
+    height: 200%;
+    width: 200%;
+    transform: rotate(-45deg);
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(226, 224, 73) 20%, rgb(36, 141, 4) 40%, #610000 50%, #8c95ec 55%, #fff 70%, #fff 100%);
+    background-size: 200% auto;
+    animation: shine 3s linear infinite;
+}
+
+button {
+    --glow-color: rgba(217, 176, 255, 0.678);
+    --glow-spread-color: rgba(191, 123, 255, 0.212);
+    --enhanced-glow-color: rgba(231, 206, 255, 0.801);
+    --btn-color: rgb(100, 61, 136);
+    --txt-color: rgba(219, 217, 221, 0.473);
+    border: .1em solid var(--glow-color);
+    padding: .75em 1.5em;
+    color: var(--txt-color);
+    font-size: 15px;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color), inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color), inset 0 0 .75em .25em var(--glow-color);
+}
+
+button:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color), inset 0 0 .5em .25em var(--glow-color);
+}
+
+@keyframes shine {
+    to {
+        background-position: 100% center;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #918701, 0 0 40px #918701, 0 0 50px #05209c, 0 0 60px #918701, 0 0 70px #918701;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #05209c, 0 0 40px #05209c, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
